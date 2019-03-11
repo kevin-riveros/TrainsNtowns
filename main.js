@@ -1,7 +1,9 @@
 
-function main(){
 
+
+function setup(){
+    var graph = new Graph();
+    console.log(graph)
 }
 
 
-main()
