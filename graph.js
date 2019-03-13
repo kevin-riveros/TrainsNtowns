@@ -1,6 +1,5 @@
 
 function Graph(inputGraph){
-   this.VERTEX_LIST = ["A", "B", "C", "D", "E"];
    this.adj = [];
    this.allPath = [];
    this.to = 0;
@@ -10,14 +9,6 @@ function Graph(inputGraph){
    this.tripsCount = 0;
    this.initializeGraph(inputGraph);
 }
-/*
-Graph.prototype.Graph = function(inputGraph){
-    if(typeof(myString) == "string"){
-       // this(VERTEX_LIST.length);
-        initializeGraph(inputGraph);
-
-    }
-}*/
 Graph.prototype.initializeGraph = function(inputGraph){
     var inputArr = inputGraph.split("; ");
     
@@ -106,12 +97,9 @@ Graph.prototype.validation= function(p,stopCount){
 }
 Graph.prototype.getPathName = function(path){
     var arr = [];
-    console.log(path);
     arr = path.trim().split();
-    console.log(arr)
     var name = "";
     for(var v of arr){
-        console.log(v);
         name += (v);
     }
     
