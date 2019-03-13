@@ -4,9 +4,8 @@ function preload(){
 }
 
 function setup(){
-    var graph = new Graph("AB5; BC4; CD8; DC8; DE6; AD5; CE2; EB3; AE7");
+    var graph = new Graph("AB5;BC4;CD8;DC8;DE6;AD5;CE2;EB3;AE7");
     console.log(graph);
-    //console.log(graph.getadj("C"));
     graph.displayDistance("ABC");
     graph.displayDistance("AD");
     graph.displayDistance("ADC"); 

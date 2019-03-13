@@ -4,6 +4,7 @@ function Edge(from,to,weight){
     this.weight = weight;
 
 }
+//getter functions
 Edge.prototype.from = function(){
     return this.from;
 }
