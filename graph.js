@@ -137,4 +137,25 @@ Graph.prototype.calculateShortes= function(from, path){
         this.calculateShortes(edge.to,next);
     }
 }
+Graph.prototype.calculateRoutesCount = function(from,to,maxDistance){
+    this.to = (to).charCodeAt(0);
+    var startIndex = (from).charCodeAt(0);
+    this.maxDistance = maxDistance;
+    this.routesCount = 0;
+    this.calculateRoutes(startIndex,from);
+    console.log (this.routesCount);
+}
+Graph.prototype.calculateRoutes = function(from,path){
+    var edgeList = this.getadj(from);
+    for(var edge of edgeList){
+        var next = path + String.fromCharCode(edge.to);
+        var distance = this.calculateDistance(this.getPathName(next))
+        if(this.to == edge.to && (distance < this.maxDistance)){
+            this.routesCount++;
+        }
+        if(distance < this.maxDistance){
+            this.calculateRoutes(edge.to,next);
+        }
+    }
+}
 

@@ -16,7 +16,7 @@ function setup(){
     graph.calculateTripsCount("A","C","t==4",4)
     graph.calculateShortestPath("A", "C")
     graph.calculateShortestPath("B", "B")
-
+    graph.calculateRoutesCount("C", "C", 30)
 
 }
 
