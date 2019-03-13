@@ -32,7 +32,7 @@ Graph.prototype.getNodes = function(index){//get array of edges
 }
 Graph.prototype.displayDistance = function(route){
     var distance = this.calculateDistance(route);
-    return (distance != -1)? console.log("distance:",distance) : console.log("NO SUCH ROUTE");//validate distance
+    return (distance != -1)? distance : "NO SUCH ROUTE";//validate distance
 }
 
 Graph.prototype.calculateDistance = function(route){ // calculate the route from specific string like "ABC"
@@ -69,7 +69,7 @@ Graph.prototype.calculateTripsCount = function(from, to ,p , stops){
     this.tripsCount = 0;
     var startIndex = (from).charCodeAt(0);
     this.calculateTrips(startIndex,String.fromCharCode(startIndex),p);
-    console.log("trips count:",this.tripsCount);
+    return this.tripsCount;
 }
 
 Graph.prototype.calculateTrips = function(from, path, p){
@@ -103,9 +103,9 @@ Graph.prototype.calculateShortestPath= function(from, to){
         }
     }
     if(shortestDistance == 99999){//set a Max value
-        console.log("distancia corta",0);
+        return 0;
     }
-    console.log("distancia corta",shortestDistance);
+    return shortestDistance;
 }
 
 Graph.prototype.calculateShortes= function(from, path){
@@ -127,7 +127,7 @@ Graph.prototype.calculateRoutesCount = function(from,to,maxDistance){
     this.maxDistance = maxDistance;
     this.routesCount = 0;
     this.calculateRoutes(startIndex,from);
-    console.log (this.routesCount);
+    return this.routesCount;
 }
 Graph.prototype.calculateRoutes = function(from,path){
     var edgeList = this.getNodes(from);
