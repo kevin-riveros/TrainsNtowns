@@ -20,12 +20,17 @@ Graph.prototype.initializeGraph = function(inputGraph){
     }
 }
 Graph.prototype.addEdge = function(edge){
-    var index = edge.from;
-    if(this.nodes[index] != null){//save the new edge in the nodesArray with the from index(Ascii code)
-        this.nodes[index].push(edge)
+    var indexFrom = edge.from;
+    var indexTo = edge.to;
+    if(this.nodes[indexFrom] != null){//save the new edge in the nodesArray with the from index(Ascii code)
+        this.nodes[indexFrom].push(edge)
     }else{
-        this.nodes[index] = [edge];
+        this.nodes[indexFrom] = [edge];
     }
+    if(this.nodes[indexTo] == null){
+        this.nodes[indexTo] = []
+    }
+
 }
 Graph.prototype.getNodes = function(index){//get array of edges
     return this.nodes[index];

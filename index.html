@@ -1,21 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TrainsNtowns</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="libraries/p5.js"></script>
-	<script src="libraries/p5.dom.js"></script>
-    <script src="libraries/p5.sound.js"></script>
-    <script src="graph.js"></script>
-    <script src="edge.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TrainsNtowns</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-    <script src="main.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-</head>
-<body>
-  
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+
+        <!--<script src="libraries/p5.js"></script>
+        <script src="libraries/p5.dom.js"></script>
+        <script src="libraries/p5.sound.js"></script>-->
+        <script src="graph.js"></script>
+        <script src="edge.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container" >
+            <h1>Trains & Towns</h1>
+            <br/>
+            <label for="inputgraph">Grafo</label>
+            <input type="text" class="form-control" id="inputgraph" placeholder="example: AB4;AC5;DE2;ED4">
+            <button class="btn btn-danger" onclick="addGraph(); return false">Agregar Grafo</button>
+            <br/>
+            <br/>
+            <br/>
+            <div>
+                <h3 id="grafoString" >Grafo: </h3>
+                <h3 id="nodosString"> </h3>
+                
+            </div>
+
+            <form class="form-inline" >
+                <div class="form-group mb-2">
+                    <label for="inputCalcularDistancia">Calcular distancia entre ciudades</label>
+                    <input type="text" class="form-control" id="inputCalcularDistancia" placeholder="example: ABC">
+                </div>    
+                <button class="btn btn-primary mb-2" onclick="onClickQ1(); return false">Calcular</button>
+                <h5 id="resultado1">-</h5>
+            </form>
+
+            <br/>
+            <form class="form-inline" >
+                    <div class="form-group mb-2">
+                        <h4>Calcular contador de viajes</h4>
+                        <label for="inputCalcularTripsCountde">De:</label>
+                        <input type="text" class="form-control" id="inputCalcularTripsCountde" placeholder="example: A">
+                        <label for="inputCalcularTripsCounta">A:</label>
+                        <input type="text" class="form-control" id="inputCalcularTripsCounta" placeholder="example: C">
+                        <label for="inputCalcularTripsCountt">Cantidad de viajes t:</label>
+                        <input type="text" class="form-control" id="inputCalcularTripsCountt" placeholder="example: t==4 o t<=3">
+                        <label for="inputCalcularTripsCount4">Paradas:</label>
+                        <input type="text" class="form-control" id="inputCalcularTripsCount4" placeholder="example: 4">
+                        <button class="btn btn-primary mb-2" onclick="onClickQ2(); return false">Calcular</button>
+                    </div>    
+                    <h5 id="resultado2">-</h5>
+            </form>
+            <form class="form-inline" >
+                    <div class="form-group mb-2">
+                        <h4>Calcular camino mas corto</h4>
+                        <label for="inputCaminoCortode">De:</label>
+                        <input type="text" class="form-control" id="inputCaminoCortode" placeholder="example: A">
+                        <label for="inputCaminoCortoa">A:</label>
+                        <input type="text" class="form-control" id="inputCaminoCortoa" placeholder="example: C">
+                    <button class="btn btn-primary mb-2" onclick="onClickQ3(); return false">Calcular</button>
+                </div>    
+                    <h5 id="resultado3">-</h5>
+            </form>
+           
+            <form class="form-inline" >
+                <div class="form-group mb-2">
+                    <h4>Calcular contador de Rutas</h4>
+                    <label for="inputContadorCaminosde">De:</label>
+                    <input type="text" class="form-control" id="inputContadorCaminosde" placeholder="example: C">
+                    <label for="inputContadorCaminosa">A:</label>
+                    <input type="text" class="form-control" id="inputContadorCaminosa" placeholder="example: C">
+                    <label for="inputContadorCaminosmaximo">Peso maximo</label>
+                    <input type="text" class="form-control" id="inputContadorCaminosmaximo" placeholder="example: 30">
+                    <button class="btn btn-primary mb-2" onclick="onClickQ4(); return false">Calcular</button>
+                </div>    
+                
+                <h5 id="resultado4">-</h5>
+        </form>
+                
+        <script type ="text/javascript">
+           main();
+        
+        </script>
+            
+
+        </div>
+       
+
 </body>
 </html>
